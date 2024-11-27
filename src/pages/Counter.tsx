@@ -1,3 +1,5 @@
+import { Button } from "@components/Button";
+import { A } from "@solidjs/router";
 import { createSignal } from "solid-js";
 
 export function Counter() {
@@ -8,12 +10,8 @@ export function Counter() {
   return (
     <section class="mt-64 flex flex-col items-center gap-6 rounded-lg bg-white px-6 py-4">
       <span class="text-2xl">{counter()}</span>
-      <button
-        class="rounded-md bg-stone-500 px-4 py-1 text-lg text-white transition-colors hover:bg-stone-600"
-        onclick={increment}
-      >
-        add
-      </button>
+      <Button onclick={increment}>add</Button>
+      <A href="/">go back</A>
     </section>
   );
 }
