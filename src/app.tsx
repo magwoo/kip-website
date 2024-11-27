@@ -2,8 +2,8 @@
 import { render } from "solid-js/web";
 import { Route, Router } from "@solidjs/router";
 import { Index } from "@pages/index";
-import { Counter } from "@pages/Counter";
-import "./index.css";
+import { Counter } from "@pages/counter";
+import "./tailwind.css";
 
 render(
   () => (
