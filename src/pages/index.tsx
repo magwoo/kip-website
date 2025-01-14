@@ -1,5 +1,4 @@
 import { Nav } from "@components/Nav";
-import { A } from "@solidjs/router";
 
 export function Index() {
   return (
