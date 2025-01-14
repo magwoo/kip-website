@@ -5,7 +5,7 @@ export function Nav() {
   return (
     <nav class="flex w-full justify-center bg-white/50 backdrop-blur-sm">
       <div class="flex w-full max-w-screen-2xl justify-between px-4 py-3">
-        <div class="flex items-center gap-12">
+        <div class="flex items-center gap-8">
           <NavLink active>Главная</NavLink>
           <NavLink>Работы</NavLink>
           <NavLink>Отчеты</NavLink>
