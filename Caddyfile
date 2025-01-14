@@ -1,0 +1,6 @@
+kip.magwoo.ru {
+	root * /web/client
+	try_files {path} index.html
+	file_server
+}
+

@@ -2,9 +2,9 @@ import { A } from "@solidjs/router";
 
 export function Index() {
   return (
-    <section class="mt-64 flex flex-col gap-4">
-      <h1 class="text-3xl">This is index page</h1>
-      <A href="/counter">go to counter.tsx page</A>
+    <section class="mt-64 flex flex-col items-center gap-4">
+      <h1 class="text-4xl font-medium">3ИСИП-722</h1>
+      <h2 class="text-xl opacity-50">тема: Смартфоны</h2>
     </section>
   );
 }
