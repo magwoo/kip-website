@@ -12,7 +12,7 @@ export function Nav() {
         <NavLink class="flex items-center gap-4">
           <span>Бутин Роман</span>
           <img
-            src="/assets/me-icon.png"
+            src="/assets/me-icon.jpg"
             alt="roman-preview"
             class="size-8 rounded-lg"
           />

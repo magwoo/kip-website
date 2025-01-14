@@ -8,7 +8,7 @@ export function Header() {
         </div>
       </div>
       <img
-        src="/assets/me-preview.png"
+        src="/assets/me-preview.jpg"
         alt="roman-preview"
         class="w-[40%] rounded-2xl"
       />
