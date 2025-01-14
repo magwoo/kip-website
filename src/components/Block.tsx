@@ -6,9 +6,15 @@ type Props = JSX.IntrinsicElements["div"] & {
 
 export function Block(props: Props) {
   return (
-    <div {...props} class={["fit flex flex-col", props.class].join(" ")}>
-      <span class="fit ml-2 text-lg font-medium">{props.title}</span>
-      <div class="flex flex-wrap gap-x-3 gap-y-2 rounded-2xl bg-black/[0.04] p-2 ring-1 ring-black/[0.08]">
+    <div class="flex flex-col">
+      <span class="ml-2 text-lg font-medium">{props.title}</span>
+      <div
+        {...props}
+        class={[
+          "rounded-2xl bg-black/[0.04] p-2 ring-1 ring-black/[0.08]",
+          props.class,
+        ].join(" ")}
+      >
         {props.children}
       </div>
     </div>

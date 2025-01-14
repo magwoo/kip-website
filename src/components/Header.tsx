@@ -8,6 +8,12 @@ const works = [
   { title: "Работа 1", href: "#" },
   { title: "Работа 1", href: "#" },
   { title: "Работа 1", href: "#" },
+  { title: "Работа 1", href: "#" },
+  { title: "Работа 1", href: "#" },
+  { title: "Работа 1", href: "#" },
+  { title: "Работа 1", href: "#" },
+  { title: "Работа 1", href: "#" },
+  { title: "Работа 1", href: "#" },
 ];
 
 export function Header() {
@@ -19,27 +25,17 @@ export function Header() {
           <h2 class="text-5xl font-medium text-stone-800/60">Смартфоны</h2>
         </div>
         <div class="flex flex-col gap-10">
-          <Block title="Работы">
+          <Block title="Работы" class="grid grid-cols-5 gap-x-4 gap-y-2">
             <For each={works}>
               {(work, index) => (
-                <WorkItem
-                  href={work.href}
-                  withSep={index() != works.length - 1}
-                >
-                  Работа {index()}
-                </WorkItem>
+                <WorkItem href={work.href}>Работа {index()}</WorkItem>
               )}
             </For>
           </Block>
-          <Block title="Отчеты">
+          <Block title="Отчеты" class="grid grid-cols-5 gap-x-4 gap-y-2">
             <For each={works}>
               {(work, index) => (
-                <WorkItem
-                  href={work.href}
-                  withSep={index() != works.length - 1}
-                >
-                  Отчет {index()}
-                </WorkItem>
+                <WorkItem href={work.href}>Отчет {index()}</WorkItem>
               )}
             </For>
           </Block>
@@ -61,16 +57,16 @@ type WorkItemProps = JSX.IntrinsicElements["div"] & {
 
 export function WorkItem(props: WorkItemProps) {
   return (
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-2">
+      <Show when={props.withSep ?? true}>
+        <div class="h-2/3 w-[1px] bg-stone-800/50" />
+      </Show>
       <a
         href={props.href}
         class="font-medium transition-colors hover:text-stone-800/75"
       >
         {props.children}
       </a>
-      <Show when={props.withSep ?? true}>
-        <div class="h-2/3 w-[1px] bg-stone-800/50" />
-      </Show>
     </div>
   );
 }
