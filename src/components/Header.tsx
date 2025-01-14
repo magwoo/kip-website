@@ -59,7 +59,7 @@ export function WorkItem(props: WorkItemProps) {
   return (
     <div class="flex items-center gap-2">
       <Show when={props.withSep ?? true}>
-        <div class="h-2/3 w-[1px] bg-stone-800/50" />
+        <span class="select-none text-stone-800/25">|</span>
       </Show>
       <a
         href={props.href}

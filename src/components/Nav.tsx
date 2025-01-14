@@ -1,4 +1,5 @@
 import { JSX } from "solid-js";
+import { GithubIcon } from "./icons/github";
 
 export function Nav() {
   return (
@@ -9,14 +10,24 @@ export function Nav() {
           <NavLink>Работы</NavLink>
           <NavLink>Отчеты</NavLink>
         </div>
-        <NavLink class="flex items-center gap-4">
-          <span>Бутин Роман</span>
-          <img
-            src="/assets/me-icon.jpg"
-            alt="roman-preview"
-            class="size-8 rounded-lg"
-          />
-        </NavLink>
+        <div class="flex flex-row-reverse items-center gap-4">
+          <a
+            href="https://github.com/magwoo/kip-website"
+            target="_blank"
+            title="github проекта"
+          >
+            <GithubIcon class="size-8 opacity-60 transition-opacity hover:opacity-100" />
+          </a>
+          <span class="select-none">|</span>
+          <NavLink class="flex items-center gap-4">
+            <span>Бутин Роман</span>
+            <img
+              src="/assets/me-icon.jpg"
+              alt="roman-preview"
+              class="size-8 rounded-lg"
+            />
+          </NavLink>
+        </div>
       </div>
     </nav>
   );
