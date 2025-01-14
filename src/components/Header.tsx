@@ -24,18 +24,15 @@ export function Header() {
           <h1 class="text-7xl font-semibold text-stone-800">3ИСИП-322</h1>
           <h2 class="text-5xl font-medium text-stone-800/60">Смартфоны</h2>
         </div>
-        <div class="flex flex-col gap-10">
-          <Block title="Работы" class="grid grid-cols-5 gap-x-4 gap-y-2">
+        <div class="flex flex-col items-start gap-10">
+          <Block title="Работы" class="grid grid-cols-5 gap-x-6 gap-y-3">
             <For each={works}>
               {(work, index) => (
                 <WorkItem href={work.href}>Работа {index()}</WorkItem>
               )}
             </For>
           </Block>
-          <Block
-            title="Отчеты"
-            class="grid grid-flow-row-dense grid-cols-5 gap-x-4 gap-y-2"
-          >
+          <Block title="Отчеты" class="grid grid-cols-5 gap-x-6 gap-y-3">
             <For each={works}>
               {(work, index) => (
                 <WorkItem href={work.href}>Отчет {index()}</WorkItem>
@@ -63,6 +60,7 @@ export function WorkItem(props: WorkItemProps) {
       <span class="select-none text-stone-800/25">|</span>
       <a
         href={props.href}
+        title="перейти к работе"
         class="font-medium transition-colors hover:text-stone-800/75"
       >
         {props.children}
