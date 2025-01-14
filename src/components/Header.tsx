@@ -1,4 +1,4 @@
-import { For, JSX, Show } from "solid-js";
+import { For, JSX } from "solid-js";
 import { Block } from "./Block";
 
 const works = [
@@ -32,7 +32,10 @@ export function Header() {
               )}
             </For>
           </Block>
-          <Block title="Отчеты" class="grid grid-cols-5 gap-x-4 gap-y-2">
+          <Block
+            title="Отчеты"
+            class="grid grid-flow-row-dense grid-cols-5 gap-x-4 gap-y-2"
+          >
             <For each={works}>
               {(work, index) => (
                 <WorkItem href={work.href}>Отчет {index()}</WorkItem>
@@ -52,15 +55,12 @@ export function Header() {
 
 type WorkItemProps = JSX.IntrinsicElements["div"] & {
   href?: string;
-  withSep?: boolean;
 };
 
 export function WorkItem(props: WorkItemProps) {
   return (
-    <div class="flex items-center gap-2">
-      <Show when={props.withSep ?? true}>
-        <span class="select-none text-stone-800/25">|</span>
-      </Show>
+    <div {...props} class={["flex items-center gap-2", props.class].join(" ")}>
+      <span class="select-none text-stone-800/25">|</span>
       <a
         href={props.href}
         class="font-medium transition-colors hover:text-stone-800/75"
