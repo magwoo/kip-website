@@ -46,15 +46,17 @@ type WorkItemProps = JSX.IntrinsicElements["div"] & {
 };
 
 export function WorkItem(props: WorkItemProps) {
+  const { href, cols, ...attrs } = props;
+
   return (
     <div
-      {...props}
+      {...attrs}
       class={["flex items-center gap-2", props.class].join(" ")}
-      style={`grid-column: span ${props.cols} / span ${props.cols}`}
+      style={`grid-column: span ${cols} / span ${cols}`}
     >
       <span class="select-none text-stone-800/25">|</span>
       <a
-        href={props.href}
+        href={href}
         title="перейти"
         class="font-medium transition-colors hover:text-stone-800/75"
       >
