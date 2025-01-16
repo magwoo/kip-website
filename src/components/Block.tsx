@@ -5,11 +5,13 @@ type Props = JSX.IntrinsicElements["div"] & {
 };
 
 export function Block(props: Props) {
+  const { title, ...attrs } = props;
+
   return (
     <div class="flex flex-col gap-1">
-      <span class="ml-2 text-lg font-medium">{props.title}</span>
+      <span class="ml-2 text-lg font-medium">{title}</span>
       <div
-        {...props}
+        {...attrs}
         class={[
           "rounded-2xl bg-white/25 p-3 ring-1 ring-black/[0.04]",
           props.class,
