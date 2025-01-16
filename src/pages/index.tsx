@@ -17,6 +17,16 @@ const works = [
   {
     title: "Карточка товара",
     description: "Описание проделанной работы примерно средней такой длины",
+    cols: 2,
+  },
+  {
+    title: "Карточка товара",
+    description: "Описание проделанной работы примерно средней такой длины",
+    cols: 2,
+  },
+  {
+    title: "Поиск",
+    description: "Описание проделанной работы примерно средней такой длины",
   },
 ];
 
@@ -24,7 +34,7 @@ export function Index() {
   return (
     <>
       <Nav />
-      <Header />
+      <Header works={works} />
       <Search />
       <div class="mb-96 mt-8 grid w-full max-w-screen-xl grid-cols-2 gap-8">
         <For each={works}>

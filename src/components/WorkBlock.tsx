@@ -6,17 +6,18 @@ type WorkBlockProps = JSX.IntrinsicElements["div"] & {
 };
 
 export function WorkBlock(props: WorkBlockProps) {
+  const { work, index, ...attrs } = props;
+
   return (
     <div
-      {...props}
+      {...attrs}
+      id={"work-" + work.title}
       class="flex h-[272px] justify-between gap-24 rounded-2xl bg-white/25 p-6 ring-1 ring-black/10"
     >
       <div class="flex h-full flex-col justify-between">
         <div class="flex flex-col">
-          <h3 class="text-3xl font-semibold text-stone-800/75">
-            {props.work.title}
-          </h3>
-          <p>{props.work.description}</p>
+          <h3 class="text-3xl font-semibold text-stone-800/75">{work.title}</h3>
+          <p>{work.description}</p>
         </div>
         <div class="flex flex-col gap-1">
           <span class="font-medium">Референсы</span>
@@ -42,7 +43,7 @@ export function WorkBlock(props: WorkBlockProps) {
         </div>
       </div>
       <div class="flex flex-col items-end justify-between">
-        <h3 class="text-3xl font-medium">#{props.index}</h3>
+        <h3 class="text-3xl font-medium">#{index}</h3>
         <div class="flex flex-col items-end gap-4">
           <button class="rounded-lg bg-white/25 px-6 py-1 text-lg font-medium ring-1 ring-black/10 hover:brightness-90">
             Figma

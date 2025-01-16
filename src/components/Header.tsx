@@ -1,41 +1,31 @@
 import { For, JSX } from "solid-js";
 import { Block } from "./Block";
 
-const works = [
-  { title: "Работа 1", href: "#" },
-  { title: "Работа 1", href: "#" },
-  { title: "Работа 1", href: "#" },
-  { title: "Работа 1", href: "#" },
-  { title: "Работа 1", href: "#" },
-  { title: "Работа 1", href: "#" },
-  { title: "Работа 1", href: "#" },
-  { title: "Работа 1", href: "#" },
-  { title: "Работа 1", href: "#" },
-  { title: "Работа 1", href: "#" },
-  { title: "Работа 1", href: "#" },
-  { title: "Работа 1", href: "#" },
-];
+type HeaderProps = JSX.IntrinsicElements["header"] & {
+  works: any[];
+};
 
-export function Header() {
+export function Header(props: HeaderProps) {
   return (
-    <header class="mt-32 flex w-full max-w-screen-xl justify-between gap-24 px-4">
+    <header
+      {...props}
+      class="mt-32 flex w-full max-w-screen-xl justify-between gap-24 px-4"
+    >
       <div class="flex flex-col gap-16">
         <div class="flex flex-col gap-2">
           <h1 class="text-7xl font-semibold text-stone-800">3ИСИП-722</h1>
           <h2 class="text-5xl font-medium text-stone-800/60">Смартфоны</h2>
         </div>
         <div class="flex flex-col items-start gap-10">
-          <Block title="Работы" class="grid grid-cols-5 gap-x-6 gap-y-3">
-            <For each={works}>
-              {(work, index) => (
-                <WorkItem href={work.href}>Работа {index()}</WorkItem>
-              )}
-            </For>
-          </Block>
-          <Block title="Отчеты" class="grid grid-cols-5 gap-x-6 gap-y-3">
-            <For each={works}>
-              {(work, index) => (
-                <WorkItem href={work.href}>Отчет {index()}</WorkItem>
+          <Block
+            title="Работы"
+            class="grid grid-flow-row-dense grid-cols-6 gap-x-6 gap-y-3"
+          >
+            <For each={props.works}>
+              {(work) => (
+                <WorkItem href={"#work-" + work.title} cols={work.cols ?? 1}>
+                  {work.title}
+                </WorkItem>
               )}
             </For>
           </Block>
@@ -52,11 +42,16 @@ export function Header() {
 
 type WorkItemProps = JSX.IntrinsicElements["div"] & {
   href?: string;
+  cols: number;
 };
 
 export function WorkItem(props: WorkItemProps) {
   return (
-    <div {...props} class={["flex items-center gap-2", props.class].join(" ")}>
+    <div
+      {...props}
+      class={["flex items-center gap-2", props.class].join(" ")}
+      style={`grid-column: span ${props.cols} / span ${props.cols}`}
+    >
       <span class="select-none text-stone-800/25">|</span>
       <a
         href={props.href}
