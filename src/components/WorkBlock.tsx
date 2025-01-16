@@ -44,13 +44,13 @@ export function WorkBlock(props: WorkBlockProps) {
       <div class="flex flex-col items-end justify-between">
         <h3 class="text-3xl font-medium">#{props.index}</h3>
         <div class="flex flex-col items-end gap-4">
-          <button class="rounded-lg bg-white/25 px-6 py-1 text-xl font-medium ring-1 ring-black/10 hover:brightness-90">
+          <button class="rounded-lg bg-white/25 px-6 py-1 text-lg font-medium ring-1 ring-black/10 hover:brightness-90">
             Figma
           </button>
-          <button class="rounded-lg bg-white/25 px-6 py-1 text-xl font-medium ring-1 ring-black/10 hover:brightness-90">
+          <button class="rounded-lg bg-white/25 px-6 py-1 text-lg font-medium ring-1 ring-black/10 hover:brightness-90">
             Диаграммы
           </button>
-          <button class="rounded-lg bg-slate-500 px-6 py-1 text-xl font-medium text-white ring-1 ring-black/10 hover:brightness-90">
+          <button class="rounded-lg bg-slate-500 px-6 py-1 text-lg font-medium text-white ring-1 ring-black/10 hover:brightness-90">
             Перейти {"->"}
           </button>
         </div>
