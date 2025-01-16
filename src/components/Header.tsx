@@ -18,7 +18,7 @@ const works = [
 
 export function Header() {
   return (
-    <header class="mt-24 flex w-full max-w-screen-xl justify-between gap-24 px-4">
+    <header class="mt-32 flex w-full max-w-screen-xl justify-between gap-24 px-4">
       <div class="flex flex-col gap-16">
         <div class="flex flex-col gap-2">
           <h1 class="text-7xl font-semibold text-stone-800">3ИСИП-722</h1>
