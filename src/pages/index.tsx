@@ -36,7 +36,7 @@ export function Index() {
       <Nav />
       <Header works={works} />
       <Search />
-      <div class="mb-96 mt-8 grid w-full max-w-screen-xl grid-cols-2 gap-8">
+      <div class="mb-96 mt-8 grid w-full max-w-screen-xl grid-cols-2 gap-8 px-4">
         <For each={works}>
           {(work, index) => <WorkBlock work={work} index={index() + 1} />}
         </For>
