@@ -8,6 +8,7 @@ export function Search() {
         <div class="flex w-full items-center gap-2 rounded-2xl bg-white/50 px-3 ring-1 ring-black/5">
           <SearchIcon class="size-6 fill-stone-800/50" />
           <input
+            name="search-query"
             type="text"
             placeholder="Найти..."
             class="text-semibold w-full bg-transparent py-1.5 text-lg text-stone-800/75 outline-none placeholder:text-stone-800/50"

@@ -1,5 +1,6 @@
-import { JSX } from "solid-js";
+import { createSignal, JSX } from "solid-js";
 import { Arrow } from "./icons/Arrow";
+import { Modal } from "./Modal";
 
 type WorkBlockProps = JSX.IntrinsicElements["div"] & {
   work: any;
@@ -24,18 +25,21 @@ export function WorkBlock(props: WorkBlockProps) {
           <span class="font-medium">Референсы</span>
           <div class="flex items-center gap-3">
             <ReferenceItem
+              title="123"
               src="/assets/wildberries-icon.png"
               alt="wildberries-icon"
               class="size-12 rounded-lg"
             />
             <span class="text-xl text-stone-800/25">|</span>
             <ReferenceItem
+              title="456"
               src="/assets/ozon-icon.png"
               alt="ozon-icon"
               class="size-12 rounded-lg"
             />
             <span class="text-xl text-stone-800/25">|</span>
             <ReferenceItem
+              title="asda"
               src="/assets/aliexpress-icon.png"
               alt="aliexpress-icon"
               class="size-12 rounded-lg"
@@ -61,13 +65,27 @@ export function WorkBlock(props: WorkBlockProps) {
   );
 }
 
-type ReferenceItemProps = JSX.IntrinsicElements["img"];
+type ReferenceItemProps = JSX.IntrinsicElements["img"] & {
+  title: string;
+};
 
 export function ReferenceItem(props: ReferenceItemProps) {
+  const { title, ...attrs } = props;
+
+  const [isOpen, setIsOpen] = createSignal(false);
+
   return (
-    <div class="group relative size-12 cursor-pointer transition-all">
-      <img {...props} class="relative z-10 size-12 rounded-lg" />
-      <div class="absolute inset-0 rounded-lg bg-black/10 opacity-0 transition-all duration-200 group-hover:-inset-1 group-hover:rounded-xl group-hover:opacity-100" />
-    </div>
+    <>
+      <Modal open={isOpen()} onclose={() => setIsOpen(false)} class="p-4">
+        <h1 class="text-3xl font-semibold">{title}</h1>
+      </Modal>
+      <button
+        class="group relative size-12 cursor-pointer transition-all"
+        onclick={() => setIsOpen(true)}
+      >
+        <img {...attrs} class="relative z-10 size-12 rounded-lg" />
+        <div class="absolute inset-0 rounded-lg bg-black/10 opacity-0 transition-all duration-200 group-hover:-inset-1 group-hover:rounded-xl group-hover:opacity-100" />
+      </button>
+    </>
   );
 }
