@@ -1,4 +1,5 @@
 import { JSX } from "solid-js";
+import { Arrow } from "./icons/Arrow";
 
 type WorkBlockProps = JSX.IntrinsicElements["div"] & {
   work: any;
@@ -51,8 +52,8 @@ export function WorkBlock(props: WorkBlockProps) {
           <button class="rounded-lg bg-white/25 px-6 py-1 text-lg font-medium ring-1 ring-black/10 hover:brightness-90">
             Диаграммы
           </button>
-          <button class="rounded-lg bg-slate-500 px-6 py-1 text-lg font-medium text-white ring-1 ring-black/10 hover:brightness-90">
-            Перейти {"->"}
+          <button class="flex gap-1 rounded-lg bg-slate-500 px-6 py-1 text-lg font-medium text-white ring-1 ring-black/10 hover:brightness-90">
+            Перейти <Arrow class="h-full fill-white" />
           </button>
         </div>
       </div>
@@ -66,7 +67,7 @@ export function ReferenceItem(props: ReferenceItemProps) {
   return (
     <div class="group relative size-12 cursor-pointer transition-all">
       <img {...props} class="relative z-10 size-12 rounded-lg" />
-      <div class="absolute inset-0 rounded-xl bg-black/10 opacity-0 transition-all duration-200 group-hover:-inset-1 group-hover:opacity-100" />
+      <div class="absolute inset-0 rounded-lg bg-black/10 opacity-0 transition-all duration-200 group-hover:-inset-1 group-hover:rounded-xl group-hover:opacity-100" />
     </div>
   );
 }
