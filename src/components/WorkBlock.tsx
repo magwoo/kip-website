@@ -25,21 +25,24 @@ export function WorkBlock(props: WorkBlockProps) {
           <span class="font-medium">Референсы</span>
           <div class="flex items-center gap-3">
             <ReferenceItem
-              title="123"
+              imgUrl="cart/wildberries.png"
+              title="Wildberries"
               src="/assets/wildberries-icon.png"
               alt="wildberries-icon"
               class="size-12 rounded-lg"
             />
             <span class="text-xl text-stone-800/25">|</span>
             <ReferenceItem
-              title="456"
+              imgUrl="cart/ozon.png"
+              title="Ozon"
               src="/assets/ozon-icon.png"
               alt="ozon-icon"
               class="size-12 rounded-lg"
             />
             <span class="text-xl text-stone-800/25">|</span>
             <ReferenceItem
-              title="asda"
+              imgUrl="cart/aliexpress.png"
+              title="Aliexpress"
               src="/assets/aliexpress-icon.png"
               alt="aliexpress-icon"
               class="size-12 rounded-lg"
@@ -67,17 +70,38 @@ export function WorkBlock(props: WorkBlockProps) {
 
 type ReferenceItemProps = JSX.IntrinsicElements["img"] & {
   title: string;
+  imgUrl: string;
 };
 
 export function ReferenceItem(props: ReferenceItemProps) {
-  const { title, ...attrs } = props;
+  const { title, imgUrl, ...attrs } = props;
 
   const [isOpen, setIsOpen] = createSignal(false);
 
   return (
     <>
-      <Modal open={isOpen()} onclose={() => setIsOpen(false)} class="p-4">
-        <h1 class="text-3xl font-semibold">{title}</h1>
+      <Modal
+        open={isOpen()}
+        onclose={() => setIsOpen(false)}
+        class="mx-12 flex w-full max-w-screen-2xl flex-col gap-4 p-4"
+      >
+        <div class="flex w-full justify-between">
+          <h1 class="text-3xl font-semibold text-stone-700">
+            Референс {title}
+          </h1>
+          <button
+            title="Закрыть"
+            class="flex size-8 items-center justify-center rounded-lg text-xl transition-colors hover:bg-red-500 hover:text-white"
+            onclick={() => setIsOpen(false)}
+          >
+            ✗
+          </button>
+        </div>
+        <img
+          src={"/assets/references/" + imgUrl}
+          alt="reference-preview"
+          class="w-full rounded-lg ring-1 ring-black/10"
+        />
       </Modal>
       <button
         class="group relative size-12 cursor-pointer transition-all"

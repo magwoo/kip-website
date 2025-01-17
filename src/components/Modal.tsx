@@ -11,7 +11,7 @@ export function Modal(props: ModalProps) {
   return (
     <Show when={props.open}>
       <div
-        class="fixed inset-0 z-40 flex items-center justify-center bg-black/35 pb-[25vh] backdrop-blur-sm"
+        class="fixed inset-0 z-40 flex items-center justify-center bg-black/35 pb-16 backdrop-blur-sm"
         onclick={(e) => {
           props.onclose();
           e.stopPropagation();
