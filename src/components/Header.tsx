@@ -29,6 +29,13 @@ export function Header(props: HeaderProps) {
               )}
             </For>
           </Block>
+          <a
+            href="/assets/report.pdf"
+            target="_blank"
+            class="rounded-lg bg-white/25 px-6 py-1 font-medium ring-1 ring-black/10"
+          >
+            Отчет
+          </a>
         </div>
       </div>
       <img
