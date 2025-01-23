@@ -1,5 +1,6 @@
-import { For, JSX } from "solid-js";
+import { JSX } from "solid-js";
 import { Block } from "./Block";
+import { A } from "@solidjs/router";
 
 type HeaderProps = JSX.IntrinsicElements["header"] & {
   works: any[];
@@ -18,16 +19,15 @@ export function Header(props: HeaderProps) {
         </div>
         <div class="flex flex-col items-start gap-10">
           <Block
-            title="Работы"
+            title="Лабораторные"
             class="grid grid-flow-row-dense grid-cols-6 gap-x-6 gap-y-3"
           >
-            <For each={props.works}>
-              {(work) => (
-                <WorkItem href={"#work-" + work.title} cols={work.cols ?? 1}>
-                  {work.title}
-                </WorkItem>
-              )}
-            </For>
+            <A
+              href="/js"
+              class="font-medium text-stone-800/40 hover:text-stone-800/60"
+            >
+              19 задач
+            </A>
           </Block>
           <a
             href="/assets/report.pdf"

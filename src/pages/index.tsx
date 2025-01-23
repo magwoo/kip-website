@@ -1,6 +1,5 @@
 import { Gradients } from "@components/Background";
 import { Header } from "@components/Header";
-import { Modal } from "@components/Modal";
 import { Nav } from "@components/Nav";
 import { Search } from "@components/Search";
 import { WorkBlock } from "@components/WorkBlock";
