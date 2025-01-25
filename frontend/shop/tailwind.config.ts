@@ -7,7 +7,11 @@ const config: Config = {
   ],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        inter: "Inter, ui-sans-serif, system-ui, sans-serif",
+      },
+    },
   },
   plugins: [],
 };

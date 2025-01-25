@@ -1,3 +1,10 @@
+import { Nav } from "@components/Nav";
+
 export function CartPage() {
-  return <span>123</span>;
+  return (
+    <>
+      <Nav />
+      <main></main>
+    </>
+  );
 }
