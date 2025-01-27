@@ -13,7 +13,7 @@ COPY frontend/shop .
 RUN npm run build
 
 FROM caddy:2.8.4-alpine AS proxy-runtime
-COPY Caddyfile /etc/caddy/Caddyfile
+COPY frontend/Caddyfile /etc/caddy/Caddyfile
 COPY --from=promo-builder /build/dist /web/promo
 COPY --from=shop-builder /build/dist /web/shop
 
