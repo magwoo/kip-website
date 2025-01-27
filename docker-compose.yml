@@ -2,6 +2,8 @@ services:
   proxy:
     container_name: kip-proxy
     image: ghcr.io/magwoo/kip-proxy:latest
-    volumes:
-      - ./data/caddy:/data/caddy
+
+networks:
+  proxy_network:
+    extends: true
 
