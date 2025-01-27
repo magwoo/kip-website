@@ -31,7 +31,7 @@ jobs:
         run: |
           docker buildx build \
             --platform linux/amd64 \
-            --file Dockerfile \
+            --file frontend/Dockerfile \
             --cache-from type=registry,ref=ghcr.io/magwoo/kip-proxy:cache \
             --cache-to type=registry,ref=ghcr.io/magwoo/kip-proxy:cache,mode=max \
             --tag ghcr.io/magwoo/kip-proxy:latest \
