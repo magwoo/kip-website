@@ -5,5 +5,5 @@ services:
 
 networks:
   proxy_network:
-    extends: true
+    external: true
 
