@@ -1,6 +1,4 @@
-import { A } from "@solidjs/router";
 import { Icon } from "./Icon";
-import { JSX } from "solid-js";
 import { HStack } from "./uikit/Stack";
 import { Link } from "./uikit/Link";
 
@@ -41,22 +39,5 @@ export function Nav() {
         </HStack>
       </HStack>
     </nav>
-  );
-}
-
-type NavLinkProps = JSX.IntrinsicElements["a"] & {
-  href: string;
-};
-
-export function NavLink(props: NavLinkProps) {
-  return (
-    <A
-      {...props}
-      class={[
-        "flex font-medium text-stone-500 transition-colors hover:text-stone-600",
-        props.class,
-      ].join(" ")}
-      activeClass="text-blue-500"
-    ></A>
   );
 }
