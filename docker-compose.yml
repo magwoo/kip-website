@@ -1,7 +1,10 @@
 services:
   proxy:
     container_name: kip-proxy
+    restart: always
     image: ghcr.io/magwoo/kip-proxy:latest
+    networks:
+      - proxy_network
 
 networks:
   proxy_network:
