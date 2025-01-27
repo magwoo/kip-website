@@ -2,10 +2,6 @@ services:
   proxy:
     container_name: kip-proxy
     image: ghcr.io/magwoo/kip-proxy:latest
-    ports:
-      - 80:80
-      - 443:443
     volumes:
       - ./data/caddy:/data/caddy
-
 

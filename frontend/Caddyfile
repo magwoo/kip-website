@@ -1,5 +1,11 @@
-:80 {
-	root * /web/client
+http://kip.magwoo.ru {
+	root * /web/promo
+	try_files {path} index.html
+	file_server
+}
+
+http://shop.magwoo.ru {
+	root * /web/shop
 	try_files {path} index.html
 	file_server
 }
