@@ -1,7 +1,7 @@
 import { JSX } from "solid-js";
 
 export type IconProps = JSX.IntrinsicElements["span"] & {
-  size?: "sm" | "md";
+  size?: "sm" | "md" | "lg";
 };
 
 export function Icon(props: IconProps) {
@@ -10,6 +10,7 @@ export function Icon(props: IconProps) {
   const sizeClass = {
     sm: "text-lg",
     md: "text-xl",
+    lg: "text-2xl",
   }[size ?? "md"];
 
   return (

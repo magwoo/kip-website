@@ -28,13 +28,13 @@ export function Nav() {
           </HStack>
           <span class="text-stone-500/25">|</span>
           <Link href="/profile">
-            <Icon class="text-2xl">person</Icon>
+            <Icon size="lg">person</Icon>
           </Link>
           <Link href="/favorite">
-            <Icon class="text-2xl">favorite</Icon>
+            <Icon size="lg">favorite</Icon>
           </Link>
           <Link href="/cart">
-            <Icon class="text-2xl">shopping_bag</Icon>
+            <Icon size="lg">shopping_bag</Icon>
           </Link>
         </HStack>
       </HStack>
