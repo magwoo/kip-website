@@ -9,6 +9,7 @@ const works = [
   {
     title: "Корзина",
     description: "Описание проделанной работы примерно средней такой длины",
+    url: "https://shop.magwoo.ru/cart",
   },
   {
     title: "Поиск",

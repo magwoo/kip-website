@@ -59,9 +59,13 @@ export function WorkBlock(props: WorkBlockProps) {
           <button class="rounded-lg bg-white/25 px-6 py-1 text-lg font-medium ring-1 ring-black/10 hover:brightness-90">
             Диаграммы
           </button>
-          <button class="flex gap-1 rounded-lg bg-slate-500 px-6 py-1 text-lg font-medium text-white ring-1 ring-black/10 hover:brightness-90">
+          <a
+            href={work.url}
+            target="_blank"
+            class="flex gap-1 rounded-lg bg-slate-500 px-6 py-1 text-lg font-medium text-white ring-1 ring-black/10 hover:brightness-90"
+          >
             Перейти <Arrow class="h-full fill-white" />
-          </button>
+          </a>
         </div>
       </div>
     </div>
