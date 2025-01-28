@@ -4,6 +4,7 @@ import { Nav } from "@components/Nav";
 import { HStack, VStack } from "@components/uikit/Stack";
 import { Block } from "@components/Block";
 import { createSignal } from "solid-js";
+import { Input } from "@components/uikit/Input";
 
 export function CartPage() {
   return (
@@ -47,11 +48,7 @@ export function CartPage() {
             <VStack class="gap-2">
               <span>Есть промокод?</span>
               <HStack class="flex gap-2">
-                <input
-                  type="text"
-                  class="grow rounded-md bg-slate-200/50 px-4 py-2 text-stone-500 outline-none placeholder:text-stone-500/60"
-                  placeholder="Промокод"
-                />
+                <Input containerClass="grow" placeholder="Промокод" />
                 <Button variant="accent">Применить</Button>
               </HStack>
             </VStack>
