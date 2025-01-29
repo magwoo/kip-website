@@ -1,10 +1,21 @@
 import { Icon } from "./Icon";
 import { HStack } from "./uikit/Stack";
 import { Link } from "./uikit/Link";
+import { useSearchParams } from "@solidjs/router";
+import { Profile } from "./Profile";
+import { createSignal } from "solid-js";
+import { Button } from "./uikit/Button";
+import { Input } from "./uikit/Input";
 
 export function Nav() {
+  const [searchParams, setSearchParams] = useSearchParams();
+
   return (
     <nav class="flex w-full justify-center border-b border-black/10">
+      <Profile
+        open={!!searchParams.profile}
+        onclose={() => setSearchParams({ profile: undefined })}
+      />
       <HStack class="w-full max-w-[1440px] justify-between px-4 py-3">
         <HStack class="items-center gap-10">
           <Link href="/home" class="font-medium">
@@ -18,18 +29,26 @@ export function Nav() {
           </Link>
         </HStack>
         <HStack class="items-center gap-6">
-          <HStack class="w-64 items-center rounded-md bg-slate-200/50 px-2">
-            <input
-              type="text"
-              placeholder="Найти.."
-              class="grow bg-transparent text-sm text-stone-500 outline-none placeholder:text-stone-500/75"
-            />
-            <Icon class="text-xl text-stone-500/75">search</Icon>
-          </HStack>
+          <Input
+            placeholder="Найти..."
+            class="w-48"
+            size="sm"
+            after={
+              <Icon class="text-accent/50" size="sm">
+                search
+              </Icon>
+            }
+          />
           <span class="text-stone-500/25">|</span>
-          <Link href="/profile">
-            <Icon size="lg">person</Icon>
-          </Link>
+          <Button
+            variant="transparent"
+            size="lg-inline"
+            onclick={() => setSearchParams({ profile: "open" })}
+          >
+            <Icon size="lg" class="text-accent/75 hover:text-accent">
+              person
+            </Icon>
+          </Button>
           <Link href="/favorite">
             <Icon size="lg">favorite</Icon>
           </Link>
